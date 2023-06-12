@@ -8,8 +8,7 @@
 }
 
 
-
-/*     Start of Navbar Styling     */
+/*                Start of Navbar Styling             */
 nav{
     background-color: #D9D9D9;
     padding: 20px;
@@ -61,10 +60,10 @@ ul li a{
     /* border-radius: 50%; */
 }
 
-/*     End of Navbar Styling     */
+/*           End of Navbar Styling                */
 
 
-/*      Start of Footer Styling */
+/*      Start of Footer Stylin     */
 footer{
     background-color: #D9D9D9;
 }
@@ -129,3 +128,33 @@ footer{
     padding: 10px;
     background-color: darkgrey;
 }
+/*         FOOTER STYLING           */
+
+
+
+
+/*             CART MODAL STYLING                    */
+
+.table-image thead td,.table-image thead th{
+    border:0;
+    color: black;
+    font-size: 15px;
+}
+
+.table-image td,.table-image th{
+    vertical-align:middle;
+    text-align:center
+}
+
+.table-image td.quantity, .table-image th.quantity{
+    max-width:2rem
+}
+
+.price{
+    margin-left:1rem
+}
+
+.modal-footer{
+    padding-top:0
+}
+/*               CART MODAL STYLING               */
