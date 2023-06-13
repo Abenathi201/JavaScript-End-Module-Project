@@ -108,14 +108,13 @@ function cartDisplay() {
     shoppingCart.forEach((product, index) =>{
         const cartTable = document.createElement("div");
         cartTable.innerHTML = `
-        <table class="table table-image" id="table">
+        <table class="table" id="table">
             <thead>
             <tr>
             <th></th>
-            <th></th>
+            <th>Product</th>
             <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
+            <th id="quantity">Quantity</th>
             <th>Actions</th>
             </tr>
             </thead>
@@ -126,8 +125,7 @@ function cartDisplay() {
             </td>
             <td class="">${product.name}</td>
             <td>R ${product.price}</td>
-            <td class="quantity"><input type="number" class="form-control" id="input1" value="0" disabled></td>
-            <td></td>
+            <td class="quantity"><input type="number" class="form-control" id="input1"></td>
             <td>
             <button class="btn btn-danger btn-sm">
             <i class="fa fa-times" onclick="deleteItems(${index})"></i>
@@ -149,3 +147,10 @@ function deleteItems(index) {
     localStorage.setItem("products", JSON.stringify(shoppingCart));
     cartDisplay();
 }
+
+let inputs = document.getElementById("input1")
+    for (let i = 0; i < inputs.length; i++) {
+        let input = inputs[i].value
+        console.log(input);
+        input.addEventListener('change', quantityChanged)
+    }
