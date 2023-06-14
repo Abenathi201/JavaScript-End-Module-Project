@@ -63,11 +63,23 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="cart-modal">
-                
+                <table class="table" id="table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Name </th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablebody">
+
+                    </tbody>
+                </table>
             </div>
             <div class="modal-footer">
                 <div class="total">
-                    <h4>Total</h4>
+                    <h4 id="total">Sub-Total</h4>
                 </div>
 
               <div class="footer-btn">
