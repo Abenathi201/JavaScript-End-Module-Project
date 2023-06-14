@@ -97,7 +97,7 @@ function addToCart(productId) {
         cartDisplay();
     } else if(product == product.id) {
         product++;
-        shoppingCart.push(product);
+        shoppingCart.push(product)
     }
 }
 
