@@ -155,6 +155,7 @@ footer{
 }
 
 .modal-footer{
-    padding-top:0
+    display: flex;
+    justify-content: space-between;
 }
 /*               CART MODAL STYLING               */

@@ -80,72 +80,69 @@ function displayProducts() {
         <button onclick="addToCart(${product.id})" class="cart-btn">Add to cart</button> 
         </div>
     </div>`;
-          
       ourProducts.appendChild(productElement);
-      console.log(ourProducts);
     });
   }
 displayProducts();
 
-let shoppingCart = JSON.parse(localStorage.getItem("products")) || [];
+let shoppingCart = JSON.parse(localStorage.getItem("cartProducts")) || [];
 
 function addToCart(productId) {
     const product = myProducts.find((product) => product.id === productId);
-    if (product && product.quantity > 0) {
-        product.quantity--;
-        shoppingCart.push(product);
-        cartDisplay();
-    } else if(product == product.id) {
-        product++;
-        shoppingCart.push(product)
+    
+    if (product) {
+        if (product.quantity > 0) {
+            product.quantity--;
+            shoppingCart.push(product);
+        } 
+        else {
+            console.log("Product Out Of Stock");
+            alert("The product you're looking for is out of stock")
+        }
     }
+    cartDisplay();
 }
 
 function cartDisplay() {
-    const cartContent = document.getElementById("cart-modal");
+    const cartContent = document.getElementById("tbody");
     localStorage.setItem("products", JSON.stringify(shoppingCart));
     cartContent.innerHTML = "";
     shoppingCart.forEach((product, index) =>{
-        const cartTable = document.createElement("div");
+        const cartTable = document.createElement("tr");
         cartTable.innerHTML = `
-        <table class="table table-image" id="table">
-            <thead>
-            <tr>
-            <th></th>
-            <th></th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total</th>
-            <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
             <td class="w-25">
             <img src="${product.image}" alt="logo-img">
             </td>
             <td class="">${product.name}</td>
             <td>R ${product.price}</td>
-            <td class="quantity"><input type="number" class="form-control" id="input1" value="0" disabled></td>
-            <td></td>
             <td>
             <button class="btn btn-danger btn-sm">
             <i class="fa fa-times" onclick="deleteItems(${index})"></i>
             </button>
             </td>
-            </tr>
-            </tbody>
-        </table>
         `;
         cartContent.appendChild(cartTable);
     })
 }
 cartDisplay();
 
+
+function totalSum () {
+    const sumTotal = document.getElementById("total-price");
+    let totalPrice = 0;
+
+    shoppingCart.forEach((product) => {
+        totalPrice += product.price;
+    });
+    console.log(shoppingCart);
+    console.log("Total Price:", totalPrice);
+    sumTotal.innerText = `Total: R ${totalPrice}`;
+    cartDisplay()
+}
+totalSum();
+
 function deleteItems(index) {
-    let cart = localStorage.getItem("products");
-    shoppingCart = JSON.parse(cart);
     shoppingCart.splice(index, 1);
-    localStorage.setItem("products", JSON.stringify(shoppingCart));
+    localStorage.setItem("cartProducts", JSON.stringify(shoppingCart));
     cartDisplay();
 }
