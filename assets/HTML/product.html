@@ -96,25 +96,21 @@
 
 
 
-    <section class="1st-section">
+    <section class="product-section">
         <h1 class="product-header">Products</h1>
-
-        <div class="sort-dropdown">
-            <div class="content-list">
-                <select class="select-menu">
-                    <option value="" disabled selected>Sort by:</option>
-                    <option value="option1">Ascending A - Z</option>
-                    <option value="option2">Descending Z - A</option>
-                    <option value="option3">Date, New to Old</option>
-                    <option value="option4">Date, Old to New</option>
-                </select>
-            </div>
-        </div>
-        
-        <div>
-
+        <div class="product-layout">
+            
             <div class="filter">
-
+                <div>
+                <label for="category">Filter by Category:</label>
+                    <select id="category">
+                      <option value="">All</option>
+                      <option value="T-Shirts">T-Shirts</option>
+                      <option value="Jackets">Jackets</option>
+                      <option value="Pants">Pants</option>
+                    </select>
+                    <button onclick="filterByCategory()" class="filter-btn">Filter</button>
+                </div>
             </div>
 
             <div class="products" id="1st-products">
