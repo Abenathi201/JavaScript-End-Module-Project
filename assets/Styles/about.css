@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .about-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .about-image {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .about-text {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .about-section {
+      flex-direction: column;
+    }
+    
+    .about-image, .about-text {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
