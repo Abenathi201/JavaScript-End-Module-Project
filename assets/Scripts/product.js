@@ -18,7 +18,7 @@ const myProducts = [
     {
         id: 3,
         image:"https://i.postimg.cc/BQ87C7cw/Men-s-Wedding-Shirt-Striped-Tops-Basic-White-Black-Blue.jpg",
-        name: "Men’s Wedding Shirt Striped Tops Basic White Black Blue",
+        name: "Men’s Wedding Shirt Striped Tops Basic White",
         price: 599,
         category: "T-Shirts",
         quantity: 18,
