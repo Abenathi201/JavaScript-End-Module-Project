@@ -9,6 +9,10 @@ body {
     font-size: 32px;
     margin-bottom: 20px;
   }
+
+  .about-description{
+    margin-inline: 10px;
+  }
   
   .about-section {
     display: flex;

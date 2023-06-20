@@ -1,3 +1,5 @@
+const adminProducts = JSON.parse(localStorage.getItem("adminProducts")) || [];
+
 const myProducts = [
     {
         id: 1,
@@ -176,11 +178,15 @@ function displayProducts(category = "") {
         </div>
     </div>`;
       ourProducts.appendChild(productElement);
-      console.log(productElement);
       }
     });
-  }
+}
 displayProducts();
+
+for(let i = 0; i < adminProducts.length; i++) {
+    myProducts.push(adminProducts[i]);
+    displayProducts();
+}
 
 function filterByCategory() {
     const selectCategory = document.getElementById("category");
@@ -240,8 +246,6 @@ function totalSum () {
     shoppingCart.forEach((product) => {
         totalPrice += product.price;
     });
-    console.log(shoppingCart);
-    console.log("Total Price:", totalPrice);
     sumTotal.innerText = `Total: R ${totalPrice}`;
 }
 totalSum();
